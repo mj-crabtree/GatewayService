@@ -1,3 +1,5 @@
+using GatewayService.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -7,6 +9,7 @@ builder.Services.AddControllers();
 #region CustomMiddleware
 
 builder.Services.AddHttpClient();
+builder.Services.AddScoped<IHttpClientService, HttpClientService>();
 
 #endregion
 
